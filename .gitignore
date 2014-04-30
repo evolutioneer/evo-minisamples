@@ -1,0 +1,5 @@
+deploy
+*.data
+*.class
+*.DS_Store
+*classes

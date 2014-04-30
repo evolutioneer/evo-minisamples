@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SenpaiView"
+  Version="11.1.2.64.36"
+  SelectList="Senpai.SENPAI_ID, 
+       Senpai.SENPAI_FIRST_NAME, 
+       Senpai.SENPAI_LAST_NAME"
+  FromList="SANDBOX.SENPAI Senpai"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Senpai"
+    Entity="model.Senpai"/>
+  <ViewAttribute
+    Name="SenpaiId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SenpaiId"
+    EntityUsage="Senpai"
+    AliasName="SENPAI_ID"/>
+  <ViewAttribute
+    Name="SenpaiFirstName"
+    PrecisionRule="true"
+    EntityAttrName="SenpaiFirstName"
+    EntityUsage="Senpai"
+    AliasName="SENPAI_FIRST_NAME"/>
+  <ViewAttribute
+    Name="SenpaiLastName"
+    PrecisionRule="true"
+    EntityAttrName="SenpaiLastName"
+    EntityUsage="Senpai"
+    AliasName="SENPAI_LAST_NAME"/>
+  <ViewAttribute
+    Name="FullHonorificName"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="FullHonorificName"
+    EntityUsage="Senpai"
+    AliasName="FULL_HONORIFIC_NAME"
+    IsQueriable="false"/>
+  <ViewLinkAccessor
+    Name="KohaiView"
+    ViewLink="model.vo.KohaiFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
