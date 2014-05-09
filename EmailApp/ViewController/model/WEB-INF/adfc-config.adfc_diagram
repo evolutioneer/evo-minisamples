@@ -3,18 +3,18 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View2">
+      id="View3">
       <property
-         name="activityId">view1</property>
+         name="activityId">Email</property>
       <property
-         name="page">/Email.jspx</property>
+         name="page">/Email.jsf</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Email&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">262.66797</property>
+         name="y">270.30078</property>
       <property
-         name="x">458.0</property>
+         name="x">277.5</property>
    </View>
 </SDM>

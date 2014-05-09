@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Email.jsf" id="d1" binding="#{backingBeanScope.emailBean.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.emailBean.f1}">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1"
+                             binding="#{backingBeanScope.emailBean.pt1}">
+                <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.emailBean.pgl1}">
+                        <af:inputText label="To Email ID" id="it1" value="#{backingBeanScope.emailBean.emailID}"/>
+                        <af:inputText label="Subject" id="it2" value="#{backingBeanScope.emailBean.emailSubject}"/>
+                        <af:inputText label="Mail Text" id="it3" value="#{backingBeanScope.emailBean.emailText}"/>
+                        <af:commandButton text="Send Email" id="cb1" binding="#{backingBeanScope.emailBean.cb1}"
+                                          actionListener="#{backingBeanScope.emailBean.sendMail}"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="end"/>
+                <f:facet name="start"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:emailBean-->
+</f:view>

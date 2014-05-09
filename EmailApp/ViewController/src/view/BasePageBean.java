@@ -1,53 +1,49 @@
 package view;
 
+
 import com.sun.mail.smtp.SMTPTransport;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 import java.util.Date;
 import java.util.Properties;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 
 import javax.mail.Message;
 import javax.mail.Session;
-
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import oracle.adf.view.rich.component.rich.input.RichInputText;
-
 import javax.naming.InitialContext;
 
+import oracle.adf.view.rich.component.rich.RichDocument;
+import oracle.adf.view.rich.component.rich.RichForm;
+import oracle.adf.view.rich.component.rich.fragment.RichPageTemplate;
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
+import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
+
+
 public class BasePageBean {
-    private RichInputText emailIdInputText;
-    private RichInputText emailSubjectInputText;
-    private RichInputText mailText;
+
+    private RichPageTemplate pt1;
+    private RichForm f1;
+    private RichDocument d1;
+    private RichPanelGroupLayout pgl1;
     
-    String emailID = null;
-    String emailSubject = null;
-    String emailText = null;
+    private String _emailID = null;
+    private String _emailSubject = null;
+    private String _emailText = null;
+    private transient PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private RichCommandButton cb1;
 
     public BasePageBean() {
     }
 
-    public void setEmailIdInputText(RichInputText emailIdInputText) {
-        this.emailIdInputText = emailIdInputText;
-    }
 
-    public RichInputText getEmailIdInputText() {
-        return emailIdInputText;
-    }
-
-    public void setEmailSubjectInputText(RichInputText emailSubjectInputText) {
-        this.emailSubjectInputText = emailSubjectInputText;
-    }
-
-    public RichInputText getEmailSubjectInputText() {
-        return emailSubjectInputText;
-    }
-
-    public void sendMail(ActionEvent actionEvent) throws Exception{
+    public void sendMail(ActionEvent actionEvent) throws Exception {
+        
         // Add event code here...
         String emailID = getEmailID();
         String subject = getEmailSubject();
@@ -76,7 +72,7 @@ public class BasePageBean {
         String protocol = props.getProperty("mail.transport.protocol");
         System.out.println("LKAPOOR:: protocol = " + protocol);
         
-        String authorization = props.getProperty("mail.smtps.auth");
+        String authorization = props.getProperty("mail.smtp.auth");
         String mailDisabled = props.getProperty("mail.disable");
         String verboseProp = props.getProperty("mail.verbose");
         String debugProp = props.getProperty("mail.debug");
@@ -94,6 +90,7 @@ public class BasePageBean {
             boolean verbose = false;
             if(verboseProp.equals("true"))
                 verbose = true;
+            
     
             String mailer = "smtpsend";
             
@@ -142,35 +139,82 @@ public class BasePageBean {
         
     }
 
-    public void setMailText(RichInputText mailText) {
-        this.mailText = mailText;
+
+    public void setPt1(RichPageTemplate pt1) {
+        this.pt1 = pt1;
     }
 
-    public RichInputText getMailText() {
-        return mailText;
+    public RichPageTemplate getPt1() {
+        return pt1;
     }
 
-    public void setEmailID(String emailID) {
-        this.emailID = emailID;
+    public void setF1(RichForm f1) {
+        this.f1 = f1;
+    }
+
+    public RichForm getF1() {
+        return f1;
+    }
+
+    public void setD1(RichDocument d1) {
+        this.d1 = d1;
+    }
+
+    public RichDocument getD1() {
+        return d1;
+    }
+
+    public void setPgl1(RichPanelGroupLayout pgl1) {
+        this.pgl1 = pgl1;
+    }
+
+    public RichPanelGroupLayout getPgl1() {
+        return pgl1;
+    }
+
+    public void setEmailID(String _emailID) {
+        String oldEmailID = this._emailID;
+        this._emailID = _emailID;
+        propertyChangeSupport.firePropertyChange("EmailID", oldEmailID, _emailID);
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.addPropertyChangeListener(l);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.removePropertyChangeListener(l);
     }
 
     public String getEmailID() {
-        return emailID;
+        return _emailID;
     }
 
-    public void setEmailSubject(String emailSubject) {
-        this.emailSubject = emailSubject;
+    public void setEmailSubject(String _emailSubject) {
+        String oldEmailSubject = this._emailSubject;
+        this._emailSubject = _emailSubject;
+        propertyChangeSupport.firePropertyChange("EmailSubject", oldEmailSubject, _emailSubject);
     }
 
     public String getEmailSubject() {
-        return emailSubject;
+        return _emailSubject;
     }
 
-    public void setEmailText(String emailText) {
-        this.emailText = emailText;
+    public void setEmailText(String _emailText) {
+        String oldEmailText = this._emailText;
+        this._emailText = _emailText;
+        propertyChangeSupport.firePropertyChange("EmailText", oldEmailText, _emailText);
     }
 
     public String getEmailText() {
-        return emailText;
+        return _emailText;
+    }
+
+    public void setCb1(RichCommandButton cb1) {
+        this.cb1 = cb1;
+    }
+
+    public RichCommandButton getCb1() {
+        return cb1;
     }
 }
