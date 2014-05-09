@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/index.jsf</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name>IndexDynamicRegionBean</managed-bean-name>
+    <managed-bean-class>view.IndexDynamicRegionBean</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

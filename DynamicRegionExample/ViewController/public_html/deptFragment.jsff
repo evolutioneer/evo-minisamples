@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row" rows="#{bindings.DepartmentsView1.rangeSize}"
+            emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.DepartmentsView1.rangeSize}" rowBandingInterval="0"
+            selectedRowKeys="#{bindings.DepartmentsView1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.DepartmentsView1.collectionModel.makeCurrent}" rowSelection="single" id="t1">
+    <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentId.name}" sortable="false"
+               headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}" id="c1">
+      <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.DepartmentsView1.hints.DepartmentId.tooltip}"
+                     id="ot1">
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+      </af:outputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentName.name}" sortable="false"
+               headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}" id="c2">
+      <af:outputText value="#{row.DepartmentName}" shortDesc="#{bindings.DepartmentsView1.hints.DepartmentName.tooltip}"
+                     id="ot2"/>
+    </af:column>
+    <af:column sortProperty="#{bindings.DepartmentsView1.hints.ManagerId.name}" sortable="false"
+               headerText="#{bindings.DepartmentsView1.hints.ManagerId.label}" id="c3">
+      <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsView1.hints.ManagerId.tooltip}" id="ot3">
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.ManagerId.format}"/>
+      </af:outputText>
+    </af:column>
+    <af:column sortProperty="#{bindings.DepartmentsView1.hints.LocationId.name}" sortable="false"
+               headerText="#{bindings.DepartmentsView1.hints.LocationId.label}" id="c4">
+      <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsView1.hints.LocationId.tooltip}"
+                     id="ot4">
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.LocationId.format}"/>
+      </af:outputText>
+    </af:column>
+  </af:table>
+</ui:composition>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelSplitter orientation="horizontal" splitterPosition="100" id="ps1">
+                <f:facet name="first">
+                    <af:panelGroupLayout layout="scroll" id="pgl1">
+                        <af:commandLink text="Show Emps" action="#{IndexDynamicRegionBean.empFragTaskFlow}"
+                                        id="cl1"/>
+                        <af:commandLink text="Show Depts" action="#{IndexDynamicRegionBean.deptFragTaskFlow}"
+                                        id="cl2"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                    <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::cl1 ::cl2"/>
+                    <!-- id="af_twocol_left_sidebar_split_stretched"   -->
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>

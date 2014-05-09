@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="Sandbox" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Sandbox" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>sandbox</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@//ose1b.chjfxzp7jycg.us-west-2.rds.amazonaws.com:1521/ORCL</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>
