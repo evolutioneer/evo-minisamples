@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/Widgets/WidgetsPage.amx" usageId="mobile_WidgetsPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mobile_WidgetsPagePageDef" path="Widgets.WidgetsPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="WidgetDC" path="mobile.WidgetDC"/>
+    <dc id="WebService" path="mobile.WebService"/>
+  </dataControlUsages>
+</Application>

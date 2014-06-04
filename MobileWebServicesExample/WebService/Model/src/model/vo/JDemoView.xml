@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JDemoView"
+  Version="11.1.2.64.36"
+  SelectList="JDemo.JDEMO_ID, 
+       JDemo.JDEMO_NAME"
+  FromList="SANDBOX.JDEMO JDemo"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SdoGen="true"
+  SdoName="JDemoViewSDO"
+  SdoNameSpace="/model/vo/common/">
+  <EntityUsage
+    Name="JDemo"
+    Entity="model.eo.JDemo"/>
+  <ViewAttribute
+    Name="JdemoId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JdemoId"
+    EntityUsage="JDemo"
+    AliasName="JDEMO_ID"/>
+  <ViewAttribute
+    Name="JdemoName"
+    PrecisionRule="true"
+    EntityAttrName="JdemoName"
+    EntityUsage="JDemo"
+    AliasName="JDEMO_NAME"/>
+</ViewObject>

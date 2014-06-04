@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CandyView"
+  Version="11.1.2.64.36"
+  SelectList="Candy.CANDY_ID, 
+       Candy.CANDY_NAME, 
+       Candy.CANDY_QUALITY, 
+       Candy.CANDY_CHOCOLATE"
+  FromList="SANDBOX.CANDY Candy"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SdoGen="true"
+  SdoName="CandyViewSDO"
+  SdoNameSpace="/model/vo/common/">
+  <EntityUsage
+    Name="Candy"
+    Entity="model.eo.Candy"/>
+  <ViewAttribute
+    Name="CandyId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CandyId"
+    EntityUsage="Candy"
+    AliasName="CANDY_ID"/>
+  <ViewAttribute
+    Name="CandyName"
+    PrecisionRule="true"
+    EntityAttrName="CandyName"
+    EntityUsage="Candy"
+    AliasName="CANDY_NAME"/>
+  <ViewAttribute
+    Name="CandyQuality"
+    PrecisionRule="true"
+    EntityAttrName="CandyQuality"
+    EntityUsage="Candy"
+    AliasName="CANDY_QUALITY"/>
+  <ViewAttribute
+    Name="CandyChocolate"
+    PrecisionRule="true"
+    EntityAttrName="CandyChocolate"
+    EntityUsage="Candy"
+    AliasName="CANDY_CHOCOLATE"/>
+</ViewObject>

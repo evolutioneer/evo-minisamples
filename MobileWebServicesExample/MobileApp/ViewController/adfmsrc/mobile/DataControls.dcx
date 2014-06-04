@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="mobile">
+  <AdapterDataControl id="WebService" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="mobile.WebService"
+                      BeanClass="mobile.WebService" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="WebService" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="mobile/AppModuleService.wsdl" ensureKeyAttribute="true" UsePersistedStructure="false">
+        <service name="AppModuleService" namespace="/model/common/" connection="WebService">
+          <port name="AppModuleServiceSoapHttpPort">
+            <operation name="findJDemoView1"/>
+            <operation name="createWidgetView1"/>
+            <operation name="findCandyView1"/>
+            <operation name="whoseYourDaddy"/>
+            <operation name="findWidgetView1"/>
+            <operation name="updateWidgetView1"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="WidgetDC" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="dc.WidgetDC" BeanClass="dc.WidgetDC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="dc.Widget"/>
+      <TypeInfo FullName="dc.WidgetDC"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="dc.WidgetDC" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

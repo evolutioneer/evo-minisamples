@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="Candy" name="Candy">
+    <adfmf:content id="Candy.1">
+      <adfmf:amx file="Candy/CandyPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="JDemo" name="JDemo">
+    <adfmf:content id="JDemo.1">
+      <adfmf:amx file="JDemo/JDemoPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="Widgets" name="Widgets">
+    <adfmf:content id="Widgets.1">
+      <adfmf:amx file="Widgets/WidgetsPage.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="11.1.2.64.36"
+  ClearCacheOnRollback="true"
+  ComponentClass="model.AppModuleImpl"
+  ComponentInterface="model.common.AppModule"
+  ClientProxyName="model.client.AppModuleClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_deployType" Value="4096"/>
+  </DesignTime>
+  <ViewUsage
+    Name="WidgetView1"
+    ViewObjectName="model.vo.WidgetView"/>
+  <ViewUsage
+    Name="JDemoView1"
+    ViewObjectName="model.vo.JDemoView"/>
+  <ViewUsage
+    Name="CandyView1"
+    ViewObjectName="model.vo.CandyView"/>
+  <Remote
+    Name="ServiceInterface"
+    ServerClassName="model.server.serviceinterface.AppModuleServiceImpl"
+    ServerInterfaceName="model.common.serviceinterface.AppModuleService">
+    <DesignTime>
+      <Attr Name="_webServiceName" Value="AppModuleService"/>
+      <Attr Name="_targetNameSpace" Value="/model/common/"/>
+    </DesignTime>
+  </Remote>
+  <ClientInterface>
+    <Method
+      Name="whoseYourDaddy"
+      MethodName="whoseYourDaddy">
+      <Return
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+  <ServiceViewUsage
+    ViewUsageName="CandyView1">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findCandyView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="JDemoView1">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findJDemoView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceViewUsage
+    ViewUsageName="WidgetView1"
+    CanCreate="true"
+    CanUpdate="true">
+    <DesignTime>
+      <Attr Name="_FindOpName" Value="findWidgetView1"/>
+      <Attr Name="_UpdateOpName" Value="updateWidgetView1"/>
+      <Attr Name="_CreateOpName" Value="createWidgetView1"/>
+    </DesignTime>
+  </ServiceViewUsage>
+  <ServiceInterface>
+    <Method
+      Name="whoseYourDaddy"
+      MethodName="whoseYourDaddy">
+      <Return
+        Type="java.lang.String"/>
+    </Method>
+  </ServiceInterface>
+</AppModule>

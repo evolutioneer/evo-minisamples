@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema elementFormDefault="qualified" targetNamespace="/model/common/types/" xmlns:ns0="/model/vo/common/" xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/" xmlns:tns="/model/common/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="/model/vo/common/" schemaLocation="WidgetViewSDO.xsd"/>
+  <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="BC4JService.xsd"/>
+  <import namespace="/model/vo/common/" schemaLocation="CandyViewSDO.xsd"/>
+  <import namespace="/model/vo/common/" schemaLocation="JDemoViewSDO.xsd"/>
+  <element name="whoseYourDaddy">
+    <complexType>
+      <sequence/>
+    </complexType>
+  </element>
+  <element name="whoseYourDaddyResponse">
+    <complexType>
+      <sequence>
+        <element name="result" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findCandyView1">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findCandyView1Response">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:CandyViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findJDemoView1">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findJDemoView1Response">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:JDemoViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createWidgetView1">
+    <complexType>
+      <sequence>
+        <element name="widgetView1" type="ns0:WidgetViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="createWidgetView1Response">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:WidgetViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateWidgetView1">
+    <complexType>
+      <sequence>
+        <element name="widgetView1" type="ns0:WidgetViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateWidgetView1Response">
+    <complexType>
+      <sequence>
+        <element name="result" type="ns0:WidgetViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findWidgetView1">
+    <complexType>
+      <sequence>
+        <element name="findCriteria" type="ns1:FindCriteria"/>
+        <element name="findControl" type="ns1:FindControl"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="findWidgetView1Response">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="result" type="ns0:WidgetViewSDO"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

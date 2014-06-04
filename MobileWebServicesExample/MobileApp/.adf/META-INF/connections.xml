@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="WebService" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://localhost:7101/WebService-Model-context-root/AppModuleService?wsdl" service="{/model/common/}AppModuleService">
+                  <model name="{/model/common/}AppModuleService" xmlns="http://oracle.com/ws/model">
+                     <service name="{/model/common/}AppModuleService">
+                        <port name="AppModuleServiceSoapHttpPort" binding="{/model/common/}AppModuleServiceSoapHttp">
+                           <soap addressUrl="http://localhost:7101/WebService-Model-context-root/AppModuleService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="createWidgetView1">
+                              <soap soapAction="/model/common/createWidgetView1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="findJDemoView1">
+                              <soap soapAction="/model/common/findJDemoView1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="findWidgetView1">
+                              <soap soapAction="/model/common/findWidgetView1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="findCandyView1">
+                              <soap soapAction="/model/common/findCandyView1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="updateWidgetView1">
+                              <soap soapAction="/model/common/updateWidgetView1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                           <operation name="whoseYourDaddy">
+                              <soap soapAction="/model/common/whoseYourDaddy" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <input name=""/>
+                              <output name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

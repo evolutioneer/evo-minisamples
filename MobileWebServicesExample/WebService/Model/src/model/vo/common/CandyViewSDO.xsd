@@ -1,0 +1,20 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="/model/vo/common/"
+     xmlns="/model/vo/common/" elementFormDefault="qualified" sdoJava:package="model.vo.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="CandyViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CandyId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CandyId" type="xsd:decimal" minOccurs="0"/>
+            <xsd:element name="CandyName" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CandyQuality" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="CandyChocolate" type="xsd:decimal" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="candyViewSDO" type="CandyViewSDO"/>
+</xsd:schema>

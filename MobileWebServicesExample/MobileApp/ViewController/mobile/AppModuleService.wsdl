@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="AppModuleService" targetNamespace="/model/common/" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/" xmlns:tns="/model/common/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="/model/common/types/">
+  <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="ServiceException.wsdl"/>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="/model/common/types/" schemaLocation="AppModuleService.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="AppModuleService_whoseYourDaddy">
+    <wsdl:part name="parameters" element="types:whoseYourDaddy"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_whoseYourDaddyResponse">
+    <wsdl:part name="parameters" element="types:whoseYourDaddyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findCandyView1">
+    <wsdl:part name="parameters" element="types:findCandyView1"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findCandyView1Response">
+    <wsdl:part name="parameters" element="types:findCandyView1Response"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findJDemoView1">
+    <wsdl:part name="parameters" element="types:findJDemoView1"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findJDemoView1Response">
+    <wsdl:part name="parameters" element="types:findJDemoView1Response"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_createWidgetView1">
+    <wsdl:part name="parameters" element="types:createWidgetView1"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_createWidgetView1Response">
+    <wsdl:part name="parameters" element="types:createWidgetView1Response"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_updateWidgetView1">
+    <wsdl:part name="parameters" element="types:updateWidgetView1"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_updateWidgetView1Response">
+    <wsdl:part name="parameters" element="types:updateWidgetView1Response"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findWidgetView1">
+    <wsdl:part name="parameters" element="types:findWidgetView1"/>
+  </wsdl:message>
+  <wsdl:message name="AppModuleService_findWidgetView1Response">
+    <wsdl:part name="parameters" element="types:findWidgetView1Response"/>
+  </wsdl:message>
+  <wsdl:portType name="AppModuleService">
+    <wsdl:documentation>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CandyView1" xmlns:ns0="/model/vo/common/" SDOName="ns0:CandyViewSDO" FindOpName="findCandyView1"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="JDemoView1" xmlns:ns0="/model/vo/common/" SDOName="ns0:JDemoViewSDO" FindOpName="findJDemoView1"/>
+      <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="WidgetView1" xmlns:ns0="/model/vo/common/" SDOName="ns0:WidgetViewSDO" CreateOpName="createWidgetView1" UpdateOpName="updateWidgetView1" FindOpName="findWidgetView1"/>
+    </wsdl:documentation>
+    <wsdl:operation name="whoseYourDaddy">
+      <wsdl:input message="tns:AppModuleService_whoseYourDaddy"/>
+      <wsdl:output message="tns:AppModuleService_whoseYourDaddyResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findCandyView1">
+      <wsdl:input message="tns:AppModuleService_findCandyView1"/>
+      <wsdl:output message="tns:AppModuleService_findCandyView1Response"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findJDemoView1">
+      <wsdl:input message="tns:AppModuleService_findJDemoView1"/>
+      <wsdl:output message="tns:AppModuleService_findJDemoView1Response"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createWidgetView1">
+      <wsdl:input message="tns:AppModuleService_createWidgetView1"/>
+      <wsdl:output message="tns:AppModuleService_createWidgetView1Response"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateWidgetView1">
+      <wsdl:input message="tns:AppModuleService_updateWidgetView1"/>
+      <wsdl:output message="tns:AppModuleService_updateWidgetView1Response"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findWidgetView1">
+      <wsdl:input message="tns:AppModuleService_findWidgetView1"/>
+      <wsdl:output message="tns:AppModuleService_findWidgetView1Response"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AppModuleServiceSoapHttp" type="tns:AppModuleService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="whoseYourDaddy">
+      <soap:operation soapAction="/model/common/whoseYourDaddy"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findCandyView1">
+      <soap:operation soapAction="/model/common/findCandyView1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findJDemoView1">
+      <soap:operation soapAction="/model/common/findJDemoView1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createWidgetView1">
+      <soap:operation soapAction="/model/common/createWidgetView1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateWidgetView1">
+      <soap:operation soapAction="/model/common/updateWidgetView1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findWidgetView1">
+      <soap:operation soapAction="/model/common/findWidgetView1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppModuleService">
+    <wsdl:port name="AppModuleServiceSoapHttpPort" binding="tns:AppModuleServiceSoapHttp">
+      <soap:address location="http://localhost:7101/MobileApp-ViewController-context-root/WebServiceService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

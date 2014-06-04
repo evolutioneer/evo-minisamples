@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="WidgetsPagePageDef"
+                Package="Widgets">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="WidgetDC" id="WidgetDCIterator"/>
+    <accessorIterator MasterBinding="WidgetDCIterator" Binds="widgets" RangeSize="25" DataControl="WidgetDC"
+                      BeanClass="dc.Widget" id="widgetsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="widgetsIterator" id="widgets">
+      <nodeDefinition DefName="dc.Widget" Name="widgets0">
+        <AttrNames>
+          <Item Value="widgetName"/>
+          <Item Value="widgetColor"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
