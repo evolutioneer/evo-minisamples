@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/feature1/untitled1.amx" usageId="mobile_untitled1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="mobile_untitled1PageDef" path="feature1.untitled1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ApplicationFeatures" path="application.ApplicationFeatures"/>
+  </dataControlUsages>
+</Application>

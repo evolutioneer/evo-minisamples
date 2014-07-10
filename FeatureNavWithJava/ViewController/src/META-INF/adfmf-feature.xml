@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="feature1" name="feature1">
+    <adfmf:content id="feature1.1">
+      <adfmf:amx file="feature1/untitled1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="feature2" name="feature2">
+    <adfmf:content id="feature2.1">
+      <adfmf:amx file="feature2/untitled1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="feature3" name="feature3">
+    <adfmf:content id="feature3.1">
+      <adfmf:amx file="feature3/untitled1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="feature4" name="feature4">
+    <adfmf:content id="feature4.1">
+      <adfmf:amx file="feature4/untitled1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="feature5" name="feature5">
+    <adfmf:content id="feature5.1">
+      <adfmf:amx file="feature5/untitled1.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>
