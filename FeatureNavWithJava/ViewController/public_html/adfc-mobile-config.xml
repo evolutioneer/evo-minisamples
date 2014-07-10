@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0"></adfc-mobile-config>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <managed-bean id="__1">
+    <managed-bean-name>MenuBean</managed-bean-name>
+    <managed-bean-class>mobile.MenuBean</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+  </managed-bean>
+</adfc-mobile-config>

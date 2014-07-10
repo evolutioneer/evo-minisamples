@@ -20,7 +20,7 @@
             <amx:setPropertyListener id="spl1" from="#{row.id}" to="#{pageFlowScope.FeatureId}" type="action"/>
             <amx:panelGroupLayout id="pgl2" halign="center">
               <amx:image id="i2" source="/resources/img/#{row.id}_Icon.gif"/>
-              <amx:outputText value="#{row.name}" id="ot2"
+              <amx:outputText value="#{applicationScope.MenuBean.parentOf[row.id]}" id="ot2"
                               inlineStyle="font-size: small; color: #66f; text-decoration: none;"/>
             </amx:panelGroupLayout>
           </amx:commandLink>
