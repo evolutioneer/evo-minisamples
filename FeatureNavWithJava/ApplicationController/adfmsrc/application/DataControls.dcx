@@ -17,11 +17,11 @@
                       ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
                       SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
                       SupportsFindMode="false" SupportsUpdates="true"
-                      Definition="oracle.adf.model.datacontrols.application.ApplicationFeatures"
-                      BeanClass="oracle.adf.model.datacontrols.application.ApplicationFeatures"
+                      Definition="com.evolutioneer.customappfeatures.CustomApplicationFeatures"
+                      BeanClass="com.evolutioneer.customappfeatures.CustomApplicationFeatures"
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
-      <bean-definition BeanClass="oracle.adf.model.datacontrols.application.ApplicationFeatures"
+      <bean-definition BeanClass="com.evolutioneer.customappfeatures.CustomApplicationFeatures"
                        xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
     </Source>
   </AdapterDataControl>

@@ -7,4 +7,8 @@
   <adfmf:featureReference id="feature3"/>
   <adfmf:featureReference id="feature4"/>
   <adfmf:featureReference id="feature5"/>
+  <adfmf:navigation>
+    <adfmf:springboard enabled="false" showSpringboardAtStartup="true" animation="none"/>
+    <adfmf:navigationBar enabled="false" displayHideShowNavigationBarControl="false"/>
+  </adfmf:navigation>
 </adfmf:application>

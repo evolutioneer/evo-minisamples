@@ -12,27 +12,18 @@
       <amx:commandButton id="cb2"/>
     </amx:facet>
     <amx:facet name="footer">
-      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" inlineStyle="margin-top: -5px;">
-        <amx:iterator var="row" value="#{bindings.features.collectionModel}" id="i1">
-          <amx:commandLink actionListener="#{bindings.gotoFeature.execute}"
-                           disabled="#{!bindings.gotoFeature.enabled}" id="cl2"
-                           inlineStyle="text-decoration: none;">
-            <amx:setPropertyListener id="spl1" from="#{row.id}" to="#{pageFlowScope.FeatureId}" type="action"/>
-            <amx:panelGroupLayout id="pgl2" halign="center">
+      <amx:panelGroupLayout id="pgl3" layout="horizontal" halign="center">
+        <amx:iterator var="row" value="#{bindings.activeNavigationFeatures.collectionModel}" id="i1">
+          <amx:commandLink actionListener="#{bindings.gotoFeature.execute}" disabled="#{!bindings.gotoFeature.enabled}"
+                           id="cl1">
+            <amx:panelGroupLayout id="pgl2" layout="vertical" halign="center">
               <amx:image id="i2" source="/resources/img/#{row.id}_Icon.gif"/>
-              <amx:outputText value="#{applicationScope.MenuBean.parentOf[row.id]}" id="ot2"
-                              inlineStyle="font-size: small; color: #66f; text-decoration: none;"/>
+              <amx:outputText value="#{row.name}" id="ot6"/>
             </amx:panelGroupLayout>
+            <amx:setPropertyListener id="spl1" from="#{row.id}" to="#{pageFlowScope.FeatureId}"/>
           </amx:commandLink>
         </amx:iterator>
       </amx:panelGroupLayout>
     </amx:facet>
-    <amx:tableLayout id="tl1">
-      <amx:rowLayout id="rl1">
-        <amx:cellFormat id="cf1">
-          <amx:spacer id="s1" height="7000"/>
-        </amx:cellFormat>
-      </amx:rowLayout>
-    </amx:tableLayout>
   </amx:panelPage>
 </amx:view>

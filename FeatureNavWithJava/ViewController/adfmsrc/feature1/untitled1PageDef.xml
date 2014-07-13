@@ -5,13 +5,15 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="root" RangeSize="25" DataControl="ApplicationFeatures" id="ApplicationFeaturesIterator"/>
-    <accessorIterator MasterBinding="ApplicationFeaturesIterator" Binds="features" RangeSize="25"
+    <accessorIterator MasterBinding="ApplicationFeaturesIterator" Binds="activeNavigationFeatures" RangeSize="25"
                       DataControl="ApplicationFeatures" BeanClass="oracle.adfmf.framework.FeatureInformation"
-                      id="featuresIterator"/>
+                      id="activeNavigationFeaturesIterator">
+      <sortCriteria></sortCriteria>
+    </accessorIterator>
   </executables>
   <bindings>
-    <tree IterBinding="featuresIterator" id="features">
-      <nodeDefinition DefName="oracle.adfmf.framework.FeatureInformation" Name="features0">
+    <tree IterBinding="activeNavigationFeaturesIterator" id="activeNavigationFeatures">
+      <nodeDefinition DefName="oracle.adfmf.framework.FeatureInformation" Name="activeNavigationFeatures0">
         <AttrNames>
           <Item Value="id"/>
           <Item Value="name"/>
