@@ -1,0 +1,31 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     targetNamespace="/model/common/" xmlns="/model/common/" elementFormDefault="qualified"
+     sdoJava:package="model.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="PartsViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>PspecId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PspecId" type="xsd:integer" minOccurs="0"/>
+            <xsd:element name="Part" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Keyword" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Description" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Fsc" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="InventoryCount" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="BacklogCount" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Oem" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="ListPrice" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="ListPriceCurrency" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="ListPriceEffective" type="ns0:dateTime-Timestamp" minOccurs="0" nillable="true"/>
+            <xsd:element name="ExportLicenseRequired" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="PotentiallyHazardous" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="partsViewSDO" type="PartsViewSDO"/>
+</xsd:schema>

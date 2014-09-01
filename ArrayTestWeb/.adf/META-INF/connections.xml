@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="AARprototype" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="AARprototype" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>aar_proto</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@//ose1b.chjfxzp7jycg.us-west-2.rds.amazonaws.com:1521/ORCL</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="{/model/common/}AppModuleService" className="oracle.jbo.client.svc.Service" xmlns="">
+      <Factory className="oracle.jbo.client.svc.ServiceFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="serviceInterfaceName">
+            <Contents>model.common.serviceinterface.AppModuleService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceEndpointProvider">
+            <Contents>ADFBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="jndiName">
+            <Contents>AppModuleServiceBean#model.common.serviceinterface.AppModuleService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaName">
+            <Contents>AppModuleService.xsd</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaLocation">
+            <Contents>model/common/serviceinterface/</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Header" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton id="cb2"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" layout="horizontal" valign="top">
+      <amx:listView var="row" value="#{bindings.evaluees.collectionModel}" fetchSize="#{bindings.evaluees.rangeSize}"
+                    styleClass="adfmf-listView-insetList" id="lv1">
+        <amx:listItem id="li1">
+          <amx:outputText value="#{row.evalueeName}" id="ot2"/>
+          <amx:setPropertyListener id="spl1" from="#{row.evalueeId}" to="#{bindings.selectedEvalueeId.inputValue}"/>
+        </amx:listItem>
+      </amx:listView>
+      <amx:panelGroupLayout id="pgl3">
+        <amx:outputText value="Please select an evaluee to view their session list." id="ot5"
+                        inlineStyle="color: red;" rendered="#{applicationScope.EvalueeDC_selectedRecordId == 0}"/>
+        <amx:outputText value="There are #{applicationScope.incompleteSessionCt} incomplete sessions for this evaluee." id="ot8" inlineStyle="color: orange;"
+                        rendered="#{applicationScope.incompleteSessionCt > 0}"/>
+        <amx:outputText value="All sessions are complete!" id="ot9" inlineStyle="color: green;"
+                        rendered="#{applicationScope.EvalueeDC_selectedRecordId &amp;&amp; applicationScope.incompleteSessionCt == 0}"/>
+        <amx:listView var="row" value="#{bindings.sessions.collectionModel}" fetchSize="#{bindings.sessions.rangeSize}"
+                      styleClass="adfmf-listView-insetList" id="lv2">
+          <amx:listItem id="li2">
+            <amx:outputText value="#{row.sessionName}" id="ot3"/>
+            <amx:setPropertyListener id="spl2" from="#{row.sessionId}" to="#{bindings.selectedSessionId.inputValue}"/>
+            <amx:selectBooleanCheckbox label="Complete?" id="sbc1" value="#{row.completed}"
+                                       disabled="#{applicationScope.incompleteQuestionCt > 0}"
+                                       valueChangeListener="#{SessionDC.onInputChange}"/>
+          </amx:listItem>
+        </amx:listView>
+      </amx:panelGroupLayout>
+      <amx:panelGroupLayout id="pgl2">
+        <amx:outputText value="Please select a session to view the questions list." id="ot6" inlineStyle="color: red;"
+                        rendered="#{applicationScope.SessionDC_selectedRecordId == 0}"/>
+        <amx:outputText value="There are #{applicationScope.incompleteQuestionCt} incomplete questions in this session." id="ot7"
+                        inlineStyle="color: orange;" rendered="#{applicationScope.incompleteQuestionCt > 0}"/>
+        <amx:outputText value="All questions are complete!" id="ot10" inlineStyle="color: green;"
+                        rendered="#{applicationScope.SessionDC_selectedRecordId &amp;&amp; applicationScope.incompleteQuestionCt == 0}"/>
+        <amx:listView var="row" value="#{bindings.questions.collectionModel}"
+                      fetchSize="#{bindings.questions.rangeSize}" styleClass="adfmf-listView-insetList" id="lv3">
+          <amx:listItem id="li3">
+            <amx:panelGroupLayout id="pgl4">
+              <amx:outputText value="#{row.questionName}" id="ot4"/>
+              <amx:inputText label="Answer" id="it1" value="#{row.questionAnswer}"
+                             valueChangeListener="#{QuestionDC.onQuestionAnswerChange}"/>
+            </amx:panelGroupLayout>
+          </amx:listItem>
+        </amx:listView>
+      </amx:panelGroupLayout>
+    </amx:panelGroupLayout>
+  </amx:panelPage>
+</amx:view>

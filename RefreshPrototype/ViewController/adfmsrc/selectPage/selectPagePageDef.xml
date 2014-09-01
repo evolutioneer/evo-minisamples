@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="selectPagePageDef"
+                Package="selectPage">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="EvalueeDC" id="EvalueeDCIterator"/>
+    <accessorIterator MasterBinding="EvalueeDCIterator" Binds="evaluees" RangeSize="25" DataControl="EvalueeDC"
+                      BeanClass="mobile.example.Evaluee" id="evalueesIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SessionDC" id="SessionDCIterator"/>
+    <accessorIterator MasterBinding="SessionDCIterator" Binds="sessions" RangeSize="25" DataControl="SessionDC"
+                      BeanClass="mobile.example.Session" id="sessionsIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="QuestionDC" id="QuestionDCIterator"/>
+    <accessorIterator MasterBinding="QuestionDCIterator" Binds="questions" RangeSize="25" DataControl="QuestionDC"
+                      BeanClass="mobile.example.Question" id="questionsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="evalueesIterator" id="evaluees">
+      <nodeDefinition DefName="mobile.example.Evaluee" Name="evaluees0">
+        <AttrNames>
+          <Item Value="evalueeName"/>
+          <Item Value="evalueeId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="sessionsIterator" id="sessions">
+      <nodeDefinition DefName="mobile.example.Session" Name="sessions0">
+        <AttrNames>
+          <Item Value="sessionName"/>
+          <Item Value="sessionId"/>
+          <Item Value="completed"/>
+          <Item Value="questionsCompleted"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="questionsIterator" id="questions">
+      <nodeDefinition DefName="mobile.example.Question" Name="questions0">
+        <AttrNames>
+          <Item Value="questionName"/>
+          <Item Value="questionId"/>
+          <Item Value="questionAnswer"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SessionDCIterator" id="selectedSessionId">
+      <AttrNames>
+        <Item Value="selectedRecordId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EvalueeDCIterator" id="selectedEvalueeId">
+      <AttrNames>
+        <Item Value="selectedRecordId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
